@@ -8,7 +8,7 @@ st.set_page_config(page_title="Super Market Sales Dashboard",page_icon="📊",la
 tab1, tab2 = st.tabs([ "🗃 Data","📈 Visualization"])
 
 #read CSV file
-df=pd.read_csv(r"C:\Users\admin\Desktop\dashboard\shipping_dataset.csv")
+df=pd.read_csv("shipping_dataset.csv")
 with tab1:
     st.subheader("Description:")
     st.markdown('''The provided dataset, named the Super Market Sales Shipping Dataset, 
