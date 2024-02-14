@@ -29,26 +29,12 @@ with tab2:
     st.markdown("<h1 style='text-align: center;'>🚚📦Super Market Sales Dashboard📦🚚</h1>", unsafe_allow_html=True)
     #add slicer of region and year
     st.sidebar.title("Filter Options")
-    
-
-
-
-#######
     df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d-%m-%Y')
     df['Year'] = df['Order Date'].dt.year
     selected_year = st.sidebar.selectbox('Select a Year',df['Year'].unique())
     filtered_df = df[df['Year'] == selected_year]
     selected_region = st.sidebar.selectbox('Select a Region', filtered_df['Region'].unique())
     filtered_df = filtered_df[(filtered_df['Region'] == selected_region)]
-
-
-
-
-
-
-
-
-
     st.divider()
     col1,col2=st.columns(2)
     with col1:
