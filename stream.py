@@ -79,20 +79,21 @@ with tab2:
         fig.update_yaxes(categoryorder='total ascending')
         st.plotly_chart(fig, use_container_width=True)
 
-
+    st.divider()
     #Line Chart of Profit by States
     st.subheader("Profit by State")
     state_profit =filtered_df.groupby('State')['Profit'].sum().reset_index()
     fig = px.line(state_profit, x='State', y='Profit')
-    st.plotly_chart(fig, use_container_width=True)   
+    st.plotly_chart(fig, use_container_width=True) 
+    st.divider()
     st.title("Overall Conclusion:")
     st.markdown('''    The bar chart above represents the sales figures categorized by different shipping modes.
     This analysis provides valuable insights into the distribution of sales across various shipping modes,
     enabling better decision-making and optimization of shipping strategies.''')
-    st.markdown('''The donut chart above illustrates the distribution of sales across different market segments.
+    st.markdown('''The pie chart above illustrates the distribution of sales across different market segments.
      This analysis aids in understanding the sales performance across different market segments,
     allowing for targeted marketing strategies and customer engagement efforts.''')
-    st.markdown('''The pie chart above visualizes the distribution of sales across different product categories.
+    st.markdown('''The donut chart above visualizes the distribution of sales across different product categories.
      This analysis helps in understanding the contribution of each category to total sales,
     enabling better inventory management and product assortment decisions.''')
     st.markdown(''' The horizontal bar chart above displays the total sales for each sub-category of products.
