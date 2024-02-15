@@ -83,7 +83,7 @@ with tab2:
     #Line Chart of Profit by States
     st.subheader("Profit by State")
     state_profit =filtered_df.groupby('State')['Profit'].sum().reset_index()
-    fig = px.line(state_profit, x='State', y='Profit')
+    fig = px.bar(state_profit, x='State', y='Profit')
     st.plotly_chart(fig, use_container_width=True) 
     st.divider()
     st.title("Overall Conclusion:")
