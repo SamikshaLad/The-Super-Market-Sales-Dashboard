@@ -33,8 +33,10 @@ with tab2:
     df['Year'] = df['Order Date'].dt.year
     selected_year = st.sidebar.selectbox('Select a Year',df['Year'].unique())
     filtered_df = df[df['Year'] == selected_year]
-    selected_region = st.sidebar.selectbox('Select a Region', filtered_df['Region'].unique())
-    filtered_df = filtered_df[(filtered_df['Region'] == selected_region)]
+    selected_region = st.sidebar.selectbox('Select a Region', ['All'] + list(filtered_df['Region'].unique()))
+    # Filter DataFrame by the selected region, or keep all regions if 'All' is selected
+    if selected_region != 'All':
+        filtered_df = filtered_df[filtered_df['Region'] == selected_region]
     st.divider()
     col1,col2=st.columns(2)
     with col1:
