@@ -101,7 +101,7 @@ with tab2:
     st.markdown(''' The horizontal bar chart above displays the total sales for each sub-category of products.
     Understanding the sales performance of different sub-categories is crucial for optimizing
     product offerings, marketing strategies, and inventory management.''')
-    st.markdown('''The line chart above illustrates the total profit generated in each state.
+    st.markdown('''The bar chart above illustrates the total profit generated in each state.
     Understanding the profitability of different states can help in identifying regions of strength 
     and areas that may require further attention or improvement in business operations. ''')
 
